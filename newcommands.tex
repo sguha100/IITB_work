@@ -1,0 +1,35 @@
+\newcommand{\track}[1]{{\textcolor{red}{#1}}}
+\newcommand{\remove}[1]{{\textcolor{green}{#1}}}
+\newcommand{\delete}[1]{{}}
+\newcommand{\sembrack}[1]{[\![#1]\!]}
+\newcommand{\existsdelay}{\exists \!\!\!\! \exists}
+\newcommand{\foralldelay}{\forall \!\!\!\! \forall}
+\newcommand{\realpos}{\mathbb{R}_{\ge 0}}
+\renewcommand{\to}[1]{\xrightarrow{#1}}
+\newcommand{\mlineqn}[5]{\begin{center}\ensuremath{#1 = \left\{ 
+  \begin{array}{l l}
+    #2 & \quad \text{#3}\\
+    #4 & \quad \text{#5}
+  \end{array} \right.}\end{center}}
+
+%%For game syntax: First argument is alternations (if empty nothing will be printed), second argument is rounds, third is graph, fourth is alpha and fifth
+%% is beta. Only first and fifth argument can be left blank.
+\newcommand{\TGame}[3]{%
+\ifthenelse{\isempty{#1}}
+{\ifthenelse{\isempty{#3}}{\Gamma_{#2}^{{#3}}}{\Gamma_{#2}^{{#3}}}}               % if no title option given
+            {#1\!-\!\Gamma_{#2}^{{#3}}}    % if title given 
+}
+
+
+% \newcommand{\TGame}[4]{#1\!-\!\Gamma_{#2}^{{#3},{#4}}}
+\newenvironment{keywords}{
+       \list{}{\advance\topsep by0.35cm\relax\small
+       \leftmargin=1cm
+       \labelwidth=0.35cm
+       \listparindent=0.35cm
+       \itemindent\listparindent
+       \rightmargin\leftmargin}\item[\hskip\labelsep
+                                     \bfseries Keywords:]}
+     {\endlist}
+\newtheorem{fact}{Fact}
+%\newtheorem{corollary}{Corollary}
